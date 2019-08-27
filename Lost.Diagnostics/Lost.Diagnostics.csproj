@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{022856E9-5345-432E-9332-EEC15B8FB4F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lost.Diagnostics</RootNamespace>
+    <AssemblyName>Lost.Diagnostics</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackgroundMonitor.cs" />
+    <Compile Include="Job.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PerformanceCounterCategories.cs" />
+    <Compile Include="PerformanceCounters.cs" />
+    <Compile Include="ProcessExtensions.cs" />
+    <Compile Include="ProcessThreadExtensions.cs" />
+    <Compile Include="ResourceManagement\IBackgroundJobMonitor.cs" />
+    <Compile Include="ResourceManagement\ILimitable.cs" />
+    <Compile Include="ResourceManagement\IResourceUsagePolicy.cs" />
+    <Compile Include="Win32\ConsoleColors.cs" />
+    <Compile Include="Win32\JobBasicAccounting.cs" />
+    <Compile Include="Win32\JobBasicProcessIDs.cs" />
+    <Compile Include="Win32\JobInfoClass.cs" />
+    <Compile Include="Win32\ProcessCreationFlags.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Win32\ProcessInformation.cs" />
+    <Compile Include="Win32\ProcessStartupInfo.cs" />
+    <Compile Include="Win32\StartupInfoFlags.cs" />
+    <Compile Include="Win32\StartupInfoWindowFlags.cs" />
+    <Compile Include="Win32\ThreadAccessRights.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LostLib\Lost.Core\Lost.Core.csproj">
+      <Project>{9042B80F-A9C4-45A0-B2C4-CD299A91A15C}</Project>
+      <Name>Lost.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

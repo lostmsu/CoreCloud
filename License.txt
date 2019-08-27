@@ -1,0 +1,9 @@
+This software licensed GNU GPL license 2.0+ with the following restrictions:
+
+1. You can not use this software or it's derivatives in non-GPL software in any 
+form (including loading as dynamic library or even SaaS). Without separate 
+license from author(s) of this software.
+
+2. You can not use this software or it's derivatives in any software written in 
+programming language which does not support function overloading by argument 
+types and/or count in any form (see above).
